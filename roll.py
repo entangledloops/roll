@@ -16,7 +16,7 @@ parser.add_argument(
     metavar="S",
     type=int,
     nargs="+",
-    help="list of integers representing sides of a die",
+    help="list of integers representing a target sequence of sides on a die",
 )
 parser.add_argument(
     "-n",
@@ -24,7 +24,7 @@ parser.add_argument(
     type=int,
     nargs="?",
     default=6,
-    help="the number of sides (faces) on the die.",
+    help="the number of sides (faces) on the die",
 )
 parser.add_argument(
     "-d",
