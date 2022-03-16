@@ -7,7 +7,7 @@ import numpy as np
 parser = argparse.ArgumentParser(
     prog="roll",
     description=(
-        "Simulates dice-rolling to estimate the expected number of rolls "
+        "Simulates dice rolling to estimate the expected number of rolls "
         "needed to encounter a sequence of interest."
     )
 )
@@ -47,7 +47,7 @@ parser.add_argument(
 rng = np.random.RandomState(0)
 
 
-def simulate_rolls(target_seq, repeat=10_000, num_sides=2, dist=None):
+def simulate_rolls(target_seq, num_sides, repeat, dist=None):
     target_len = len(target_seq)
     sides = np.arange(1, num_sides + 1)
 
@@ -95,6 +95,6 @@ if __name__ == "__main__":
     repeat = args.repeat  # how many times to repeat the experiment?
     print(f"sequence: {sequence}, num_sides: {num_sides}, dist: {dist}, repeat: {repeat}")
 
-    rolls = simulate_rolls(sequence, num_sides=num_sides, dist=dist, repeat=repeat)
+    rolls = simulate_rolls(sequence, num_sides=num_sides, repeat=repeat, dist=dist)
     print_stats(rolls)
     plot_prob(rolls)
